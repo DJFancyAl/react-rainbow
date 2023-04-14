@@ -12,7 +12,6 @@ function ColorForm({addColor}) {
         if (testObject.color == input && input != ''){
             addColor(input)
             setInput('')
-            document.getElementById("colorInput").value = ''
             setAlert('')
         } else {
             setAlert('Not a valid color!')
@@ -22,7 +21,7 @@ function ColorForm({addColor}) {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <input id="colorInput" placeholder='Enter Color Here...' type="text" onChange={(e) => setInput(e.target.value)} />
+                <input id="colorInput" placeholder='Enter Color Here...' value={input} type="text" onChange={(e) => setInput(e.target.value)} />
                 <button type='submit'>Submit!</button>
             </form>
             <h3>{alert}</h3>
