@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 
 function ColorForm({addColor}) {
     let [input, setInput] = useState('')
-    let [alert, setAlert] = useState(true)
+    let [alert, setAlert] = useState(false)
 
 
     const handleSubmit = (e) => {
         e.preventDefault()
         let testObject = new Option().style;
         testObject.color = input
-        if (testObject.color == input && input != ''){
+        if (testObject.color === input && input !== ''){
             addColor(input)
             setInput('')
             setAlert(false)
